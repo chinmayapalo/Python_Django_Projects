@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+
+{% block content %}
+	{% for post in all_blog_list %}
+		<h5>{{ post.date|date:"Y-m-d" }}<a href="/blog/{{post.id}}">  {{ post.title }}</a></h5>
+	{% endfor %}
+{% endblock %}
+
+</body>
+</html>
