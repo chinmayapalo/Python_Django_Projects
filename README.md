@@ -1,1 +1,1 @@
-# Python_Projects
+# Python_Django_Projects
