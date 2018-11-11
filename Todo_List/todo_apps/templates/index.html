@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1>ToDoList</h1>
+    <a href="/todos/add">Add Todos</a>
+    <hr>
+</header>
+<ul>
+    {% for todo in todos %}
+    <li><a href="/todos/details/{{todo.id}}"> {{todo.title}}</a>:{{todo.text}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

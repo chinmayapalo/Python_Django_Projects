@@ -11,7 +11,16 @@ class BlogPageView(ListView):
     queryset = post.objects.all().order_by("-date")[:25]
 
 
+#
+# class BlogDescView(DetailView):
+#     model = post
+#     template_name = 'post.html'
 
-class BlogDescView(DetailView):
-    model = post
-    template_name = 'post.html'
+
+
+def BlogDescView(request,id):
+    posts = post.objects.get(id=id)
+    context = {
+        'post': posts
+    }
+    return render(request, 'post.html', context)
